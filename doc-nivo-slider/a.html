@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="utf-8" />
+	
+	<title>Nivo Slider | Dev7studios Documentation</title>
+	<meta name="viewport" content="width=device-width">
+	
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Merriweather" type="text/css" />
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Code+Pro:400,500,700" type="text/css" />
+	<link rel="stylesheet" href="http://docs.dev7studios.com/themes/documentor/scripts/dropit.css" type="text/css" />
+	<link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/rainbow.min.css" type="text/css" />
+	<link rel="stylesheet" href="http://docs.dev7studios.com/themes/documentor/style.css" type="text/css" />
+
+	<script src="http://docs.dev7studios.com/themes/documentor/scripts/modernizr-2.6.1.min.js"></script>
+	<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-3892196-55']);
+	_gaq.push(['_trackPageview']);
+	(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+	</script>
+</head>
+<body>
+	<header id="header">
+		<div class="inner clearfix">
+			<h1><a href="http://docs.dev7studios.com">Dev7studios Documentation</a></h1>
+			<ul class="nav">
+				<li><a href="#">WordPress Plugins</a>
+					<ul>
+																																																																								<li><a href="http://docs.dev7studios.com/wordpress-plugins/caroufredsel">carouFredSel</a></li>
+																							<li><a href="http://docs.dev7studios.com/wordpress-plugins/closed-beta">Closed Beta</a></li>
+																							<li><a href="http://docs.dev7studios.com/wordpress-plugins/troubleshooting">WordPress Plugin Troubleshooting Guide</a></li>
+																							<li><a href="http://docs.dev7studios.com/wordpress-plugins/custom-emails">Custom Emails</a></li>
+																							<li><a href="http://docs.dev7studios.com/wordpress-plugins/showcase">Showcase</a></li>
+																							<li><a href="http://docs.dev7studios.com/wordpress-plugins/social-sharing-booster">Social Sharing Booster</a></li>
+																							<li><a href="http://docs.dev7studios.com/wordpress-plugins/media-manager-plus">Media Manager Plus</a></li>
+																							<li><a href="http://docs.dev7studios.com/wordpress-plugins/nivo-lightbox">Nivo Lightbox</a></li>
+																							<li><a href="http://docs.dev7studios.com/wordpress-plugins/ideal-image-slider">Ideal Image Slider</a></li>
+																							<li><a href="http://docs.dev7studios.com/wordpress-plugins/nivo-slider">Nivo Slider</a></li>
+																</ul>
+				</li>
+			</ul>
+			<ul class="nav">
+				<li><a href="#">jQuery Plugins</a>
+					<ul>
+																	<li><a href="http://docs.dev7studios.com/jquery-plugins/caroufredsel">carouFredSel</a></li>
+																							<li><a href="http://docs.dev7studios.com/jquery-plugins/caroufredsel-advanced">carouFredSel Advanced</a></li>
+																							<li><a href="http://docs.dev7studios.com/jquery-plugins/nivo-lightbox">Nivo Lightbox</a></li>
+																							<li><a href="http://docs.dev7studios.com/jquery-plugins/nivo-slider">Nivo Slider</a></li>
+																																																																																																																																									</ul>
+				</li>
+			</ul>
+		</div>
+	</header>
+
+	<section id="content">
+		<div class="inner clearfix">
+			<div class="main-content">
+				<h1>Nivo Slider jQuery Plugin</h1>
+
+<p>Download: <a href="http://dev7studios.com/plugins/nivo-slider">http://dev7studios.com/plugins/nivo-slider</a></p>
+
+<h2>Video Tutorial</h2>
+
+<p><iframe src="http://www.youtube.com/embed/2XwWri6Xi2s?rel=0&amp;hd=1" height="394" width="700" allowfullscreen="" frameborder="0"></iframe></p>
+
+<h2>Install files</h2>
+
+<p>Installing the Nivo Slider jQuery plugin is actually pretty simple. You just need to add the Following code to the
+<code>&lt;head&gt;</code> of your web page:</p>
+
+<pre><code>&lt;link rel="stylesheet" href="nivo-slider.css" type="text/css" /&gt;
+&lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script src="jquery.nivo.slider.pack.js" type="text/javascript"&gt;&lt;/script&gt;
+</code></pre>
+
+<p>This will make sure all the required files are loaded properly. If you have the Nivo Slider CSS and Javascript
+files in a subfolder you will need to add it to the path. Note that the Nivo Slider jQuery plugin requires jQuery v1.7+ to work.</p>
+
+<h2>Add markup</h2>
+
+<p>The HTML markup for the Nivo Slider is also very simple. You simply need to create a div with an id (<code>#slider</code> in this case)
+and add some images to it:</p>
+
+<pre><code>&lt;div id="slider" class="nivoSlider"&gt;
+    &lt;img src="images/slide1.jpg" alt="" /&gt;
+    &lt;a href="http://dev7studios.com"&gt;&lt;img src="images/slide2.jpg" alt="" title="#htmlcaption" /&gt;&lt;/a&gt;
+    &lt;img src="images/slide3.jpg" alt="" title="This is an example of a caption" /&gt;
+    &lt;img src="images/slide4.jpg" alt="" /&gt;
+&lt;/div&gt;
+&lt;div id="htmlcaption" class="nivo-html-caption"&gt;
+    &lt;strong&gt;This&lt;/strong&gt; is an example of a &lt;em&gt;HTML&lt;/em&gt; caption with &lt;a href="#"&gt;a link&lt;/a&gt;.
+&lt;/div&gt;
+</code></pre>
+
+<p>It is good practice to add the <code>nivoSlider</code> class to the <code>#slider</code> div. We've also shown in this example how to set up
+HTML captions (the title of the <code>img</code> should be id of the div containing the HTML caption).</p>
+
+<h2>Hook up the slider</h2>
+
+<p>Finally you need to hook up the slider by adding the following code after the three links we included in the <code>&lt;head&gt;</code>:</p>
+
+<pre><code>&lt;script type="text/javascript"&gt;
+$(window).load(function() {
+    $('#slider').nivoSlider();
+});
+&lt;/script&gt;
+</code></pre>
+
+<p>Note that the Nivo Slider uses the <code>$(window).load()</code> function and not <code>$(document).ready()</code> that most other jQuery plugins use.</p>
+
+<h2>Play with settings</h2>
+
+<p>The Nivo Slider has plenty of settings to fiddle with. Below is an example of the code with all available options and their defaults:</p>
+
+<pre><code>$('#slider').nivoSlider({
+    effect: 'random',               // Specify sets like: 'fold,fade,sliceDown'
+    slices: 15,                     // For slice animations
+    boxCols: 8,                     // For box animations
+    boxRows: 4,                     // For box animations
+    animSpeed: 500,                 // Slide transition speed
+    pauseTime: 3000,                // How long each slide will show
+    startSlide: 0,                  // Set starting Slide (0 index)
+    directionNav: true,             // Next &amp; Prev navigation
+    controlNav: true,               // 1,2,3... navigation
+    controlNavThumbs: false,        // Use thumbnails for Control Nav
+    pauseOnHover: true,             // Stop animation while hovering
+    manualAdvance: false,           // Force manual transitions
+    prevText: 'Prev',               // Prev directionNav text
+    nextText: 'Next',               // Next directionNav text
+    randomStart: false,             // Start on a random slide
+    beforeChange: function(){},     // Triggers before a slide transition
+    afterChange: function(){},      // Triggers after a slide transition
+    slideshowEnd: function(){},     // Triggers after all slides have been shown
+    lastSlide: function(){},        // Triggers when last slide is shown
+    afterLoad: function(){}         // Triggers when slider has loaded
+});
+</code></pre>
+
+<p>The effect parameter can be any of the following:</p>
+
+<ul>
+<li><code>sliceDown</code></li>
+<li><code>sliceDownLeft</code></li>
+<li><code>sliceUp</code></li>
+<li><code>sliceUpLeft</code></li>
+<li><code>sliceUpDown</code></li>
+<li><code>sliceUpDownLeft</code></li>
+<li><code>fold</code></li>
+<li><code>fade</code></li>
+<li><code>random</code></li>
+<li><code>slideInRight</code></li>
+<li><code>slideInLeft</code></li>
+<li><code>boxRandom</code></li>
+<li><code>boxRain</code></li>
+<li><code>boxRainReverse</code></li>
+<li><code>boxRainGrow</code></li>
+<li><code>boxRainGrowReverse</code></li>
+</ul>
+
+<h2>Using themes</h2>
+
+<p>To use themes with the Nivo Slider you will have to carry out a few more steps to get the theme to work. First you will need to
+include the theme in your page (a theme is simply a stylesheet):</p>
+
+<pre><code>&lt;!-- Include the theme stylesheet in the &lt;head&gt; section --&gt;
+&lt;link rel="stylesheet" href="nivo-slider/themes/default/default.css" type="text/css" /&gt;
+</code></pre>
+
+<p>Then you will need to tweak your HTML and make sure it is in the following format:</p>
+
+<pre><code>&lt;div class="slider-wrapper theme-default"&gt;
+    &lt;div class="ribbon"&gt;&lt;/div&gt;
+    &lt;div id="slider" class="nivoSlider"&gt;
+        ...
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>Now you can call jQuery as normal and your slider should look beautiful with the new theme showing. Note: You can load as many themes
+(stylesheets) as you want in the <code>&lt;head&gt;</code> section, however they will not be applied to the slider until you add the class
+<code>theme-{theme name}</code> to the slider-wrapper div.</p>
+
+<h2>Using thumbnails</h2>
+
+<p>To use thumbnails with your slider you need to make sure <code>controlNavThumbs</code> is set to <code>true</code>. Then the slider will look for the URL of
+the thumbnail in the <code>data-thumb</code> attribute of the image. If no URL is provided, no thumbnail will be shown. For example:</p>
+
+<pre><code>&lt;div id="slider"&gt;
+    &lt;img src="images/up.jpg" alt="" data-thumb="images/up_thumb.jpg" /&gt;
+    &lt;img src="images/monstersinc.jpg" alt="" data-thumb="images/monstersinc_thumb.jpg" /&gt;
+    &lt;img src="images/nemo.jpg" alt="" data-thumb="images/nemo_thumb.jpg" /&gt;
+    &lt;img src="images/walle.jpg" alt="" data-thumb="images/walle_thumb.jpg" /&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h2>Custom transitions per slide</h2>
+
+<p>You can override a slides transition using the <code>data-transition</code> attribute. For example:</p>
+
+<pre><code>&lt;img src="images/slide1.jpg" alt="" data-transition="slideInLeft" /&gt;
+</code></pre>
+
+<p>The above code will force this slide to use the <code>slideInLeft</code> transition every time it appears. It overrides all other effect settings.</p>
+
+			</div>
+		</div>
+	</section>
+	
+	<footer id="footer">
+		<div class="inner">
+			Copyright &copy; <a href="http://dev7studios.com">Dev7studios</a>. Powered by <a href="http://pico.dev7studios.com" target="_blank">Pico</a>.
+		</div>
+	</footer>
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	<script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+    <script src="http://docs.dev7studios.com/themes/documentor/scripts/jquery.scrollNav.min.js"></script>
+    <script src="http://docs.dev7studios.com/themes/documentor/scripts/dropit.js"></script>
+    <script src="http://docs.dev7studios.com/themes/documentor/scripts/lib.js"></script>
+    
+</body>
+</html>
