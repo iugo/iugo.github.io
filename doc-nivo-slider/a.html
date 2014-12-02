@@ -4,32 +4,23 @@
 <head>
 	<meta charset="utf-8" />
 	
-	<title>Nivo Slider | Dev7studios Documentation</title>
+	<title>Nivo Slider Documentation | Dev7studios </title>
 	<meta name="viewport" content="width=device-width">
 	
-	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Merriweather" type="text/css" />
-	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Code+Pro:400,500,700" type="text/css" />
-	<link rel="stylesheet" href="http://docs.dev7studios.com/themes/documentor/scripts/dropit.css" type="text/css" />
-	<link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/rainbow.min.css" type="text/css" />
-	<link rel="stylesheet" href="http://docs.dev7studios.com/themes/documentor/style.css" type="text/css" />
+	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather" type="text/css" />
+	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400,500,700" type="text/css" />
+	<link rel="stylesheet" href="css/dropit.css" type="text/css" />
+	<link rel="stylesheet" href="//yandex.st/highlightjs/7.3/styles/rainbow.min.css" type="text/css" />
+	<link rel="stylesheet" href="css/style.css" type="text/css" />
 
-	<script src="http://docs.dev7studios.com/themes/documentor/scripts/modernizr-2.6.1.min.js"></script>
-	<script type="text/javascript">
-	var _gaq = _gaq || [];
-	_gaq.push(['_setAccount', 'UA-3892196-55']);
-	_gaq.push(['_trackPageview']);
-	(function() {
-	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	})();
-	</script>
+	<script src="js/modernizr-2.6.1.min.js"></script>
+
 </head>
 <body>
 	<header id="header">
 		<div class="inner clearfix">
-			<h1><a href="http://docs.dev7studios.com">Dev7studios Documentation</a></h1>
-			<ul class="nav">
+			<h1><a href="#">Nivo Slider Documentation</a></h1>
+			<!-- <ul class="nav">
 				<li><a href="#">WordPress Plugins</a>
 					<ul>
 																																																																								<li><a href="http://docs.dev7studios.com/wordpress-plugins/caroufredsel">carouFredSel</a></li>
@@ -54,7 +45,7 @@
 																							<li><a href="http://docs.dev7studios.com/jquery-plugins/nivo-slider">Nivo Slider</a></li>
 																																																																																																																																									</ul>
 				</li>
-			</ul>
+			</ul> -->
 		</div>
 	</header>
 
@@ -63,29 +54,26 @@
 			<div class="main-content">
 				<h1>Nivo Slider jQuery Plugin</h1>
 
-<p>Download: <a href="http://dev7studios.com/plugins/nivo-slider">http://dev7studios.com/plugins/nivo-slider</a></p>
+<p>下载 (GitHub): <a href="https://github.com/gilbitron/Nivo-Slider">https://github.com/gilbitron/Nivo-Slider</a></p>
 
-<h2>Video Tutorial</h2>
+<h2>视频教程</h2>
 
 <p><iframe src="http://www.youtube.com/embed/2XwWri6Xi2s?rel=0&amp;hd=1" height="394" width="700" allowfullscreen="" frameborder="0"></iframe></p>
 
-<h2>Install files</h2>
+<h2>1. 安装文件</h2>
 
-<p>Installing the Nivo Slider jQuery plugin is actually pretty simple. You just need to add the Following code to the
-<code>&lt;head&gt;</code> of your web page:</p>
+<p>安装 Nivo Slider jQuery plugin 很简单. 你只需要在你的网页的 <code>&lt;head&gt;</code> 上增加如下代码: </p>
 
 <pre><code>&lt;link rel="stylesheet" href="nivo-slider.css" type="text/css" /&gt;
-&lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" type="text/javascript"&gt;&lt;/script&gt;
 &lt;script src="jquery.nivo.slider.pack.js" type="text/javascript"&gt;&lt;/script&gt;
 </code></pre>
 
-<p>This will make sure all the required files are loaded properly. If you have the Nivo Slider CSS and Javascript
-files in a subfolder you will need to add it to the path. Note that the Nivo Slider jQuery plugin requires jQuery v1.7+ to work.</p>
+<p>以上将确保所需文件能提前载入. 如果你的 Nivo Slider 有其他 CSS 或 Javascript 也需要在这里写上它们所在路径. 注意, 如果你已经使用 jQuery, 那么你可以不再重复引用, 但注意 Nivo Slider jQuery plugin 需要 jQuery v1.7 及以上版本支持.</p>
 
-<h2>Add markup</h2>
+<h2>2. 增加 HTML 标记</h2>
 
-<p>The HTML markup for the Nivo Slider is also very simple. You simply need to create a div with an id (<code>#slider</code> in this case)
-and add some images to it:</p>
+<p>Nivo Slider 的 HTML markup 也很简单. 你只需要创建一个 div 并为其标记一个 id (在这里我们举例使用 <code>#slider</code>), 然后在里面增加一些图片:</p>
 
 <pre><code>&lt;div id="slider" class="nivoSlider"&gt;
     &lt;img src="images/slide1.jpg" alt="" /&gt;
@@ -101,9 +89,9 @@ and add some images to it:</p>
 <p>It is good practice to add the <code>nivoSlider</code> class to the <code>#slider</code> div. We've also shown in this example how to set up
 HTML captions (the title of the <code>img</code> should be id of the div containing the HTML caption).</p>
 
-<h2>Hook up the slider</h2>
+<h2>3. 挂钩</h2>
 
-<p>Finally you need to hook up the slider by adding the following code after the three links we included in the <code>&lt;head&gt;</code>:</p>
+<p>最后我们需要让 div 按照 js 中写的方式去运作, 我们需要在 <code>&lt;head&gt;</code> 中写上如下代码:</p>
 
 <pre><code>&lt;script type="text/javascript"&gt;
 $(window).load(function() {
@@ -114,26 +102,26 @@ $(window).load(function() {
 
 <p>Note that the Nivo Slider uses the <code>$(window).load()</code> function and not <code>$(document).ready()</code> that most other jQuery plugins use.</p>
 
-<h2>Play with settings</h2>
+<h2>展示设置</h2>
 
-<p>The Nivo Slider has plenty of settings to fiddle with. Below is an example of the code with all available options and their defaults:</p>
+<p>Nivo Slider 有大量的自定义设置, 可以扩展各种功能. 下面是可选项和默认值:</p>
 
 <pre><code>$('#slider').nivoSlider({
-    effect: 'random',               // Specify sets like: 'fold,fade,sliceDown'
-    slices: 15,                     // For slice animations
-    boxCols: 8,                     // For box animations
-    boxRows: 4,                     // For box animations
-    animSpeed: 500,                 // Slide transition speed
-    pauseTime: 3000,                // How long each slide will show
-    startSlide: 0,                  // Set starting Slide (0 index)
-    directionNav: true,             // Next &amp; Prev navigation
-    controlNav: true,               // 1,2,3... navigation
-    controlNavThumbs: false,        // Use thumbnails for Control Nav
-    pauseOnHover: true,             // Stop animation while hovering
-    manualAdvance: false,           // Force manual transitions
+    effect: 'random',               // 可以自定义设置如: 'fold,fade,sliceDown'
+    slices: 15,                     // 仅针对 slice 特效
+    boxCols: 8,                     // 仅针对 box 特效
+    boxRows: 4,                     // 仅针对 box 特效
+    animSpeed: 500,                 // 幻灯片过渡的时间, 毫秒单位
+    pauseTime: 3000,                // 幻灯片停留的时间, 毫秒单位
+    startSlide: 0,                  // 设置初始幻灯片 (0 index)
+    directionNav: true,             // 是否设置 Next &amp; Prev 按钮导航
+    controlNav: true,               // 是否设置 1,2,3... 按钮导航
+    controlNavThumbs: false,        // 是否为 Control Nav 使用缩略图
+    pauseOnHover: true,             // 是否当鼠标悬停时停止动画过渡
+    manualAdvance: false,           // 是否不开启自动动画过渡
     prevText: 'Prev',               // Prev directionNav text
     nextText: 'Next',               // Next directionNav text
-    randomStart: false,             // Start on a random slide
+    randomStart: false,             // 是否随机播放幻灯片
     beforeChange: function(){},     // Triggers before a slide transition
     afterChange: function(){},      // Triggers after a slide transition
     slideshowEnd: function(){},     // Triggers after all slides have been shown
@@ -142,7 +130,7 @@ $(window).load(function() {
 });
 </code></pre>
 
-<p>The effect parameter can be any of the following:</p>
+<p>效果参数列表:</p>
 
 <ul>
 <li><code>sliceDown</code></li>
@@ -163,7 +151,7 @@ $(window).load(function() {
 <li><code>boxRainGrowReverse</code></li>
 </ul>
 
-<h2>Using themes</h2>
+<h2>如何自定义样式</h2>
 
 <p>To use themes with the Nivo Slider you will have to carry out a few more steps to get the theme to work. First you will need to
 include the theme in your page (a theme is simply a stylesheet):</p>
@@ -186,10 +174,9 @@ include the theme in your page (a theme is simply a stylesheet):</p>
 (stylesheets) as you want in the <code>&lt;head&gt;</code> section, however they will not be applied to the slider until you add the class
 <code>theme-{theme name}</code> to the slider-wrapper div.</p>
 
-<h2>Using thumbnails</h2>
+<h2>缩略图的用法</h2>
 
-<p>To use thumbnails with your slider you need to make sure <code>controlNavThumbs</code> is set to <code>true</code>. Then the slider will look for the URL of
-the thumbnail in the <code>data-thumb</code> attribute of the image. If no URL is provided, no thumbnail will be shown. For example:</p>
+<p>要使用缩略图请先确保 <code>controlNavThumbs</code> 被设置为 <code>true</code>. 然后为图片加上 <code>data-thumb</code> 标记. 如果 data-thumb 的值不是有效的图片 URl, 则不显示缩略图. 例子如下:</p>
 
 <pre><code>&lt;div id="slider"&gt;
     &lt;img src="images/up.jpg" alt="" data-thumb="images/up_thumb.jpg" /&gt;
@@ -199,14 +186,14 @@ the thumbnail in the <code>data-thumb</code> attribute of the image. If no URL i
 &lt;/div&gt;
 </code></pre>
 
-<h2>Custom transitions per slide</h2>
+<h2>自定义每张幻灯片的过渡特效</h2>
 
-<p>You can override a slides transition using the <code>data-transition</code> attribute. For example:</p>
+<p>你可以通过 <code>data-transition</code> 来定义特效. 例子如下:</p>
 
 <pre><code>&lt;img src="images/slide1.jpg" alt="" data-transition="slideInLeft" /&gt;
 </code></pre>
 
-<p>The above code will force this slide to use the <code>slideInLeft</code> transition every time it appears. It overrides all other effect settings.</p>
+<p>以上设置将使这张图片每次都会以 <code>slideInLeft</code> 这种特效出现. 它的优先级更高, 会覆盖默认的全局设置.</p>
 
 			</div>
 		</div>
@@ -218,11 +205,11 @@ the thumbnail in the <code>data-thumb</code> attribute of the image. If no URL i
 		</div>
 	</footer>
 	
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-	<script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
-    <script src="http://docs.dev7studios.com/themes/documentor/scripts/jquery.scrollNav.min.js"></script>
-    <script src="http://docs.dev7studios.com/themes/documentor/scripts/dropit.js"></script>
-    <script src="http://docs.dev7studios.com/themes/documentor/scripts/lib.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	<script src="//yandex.st/highlightjs/7.3/highlight.min.js"></script>
+    <script src="js/jquery.scrollNav.min.js"></script>
+    <script src="js/dropit.js"></script>
+    <script src="js/lib.js"></script>
     
 </body>
 </html>
