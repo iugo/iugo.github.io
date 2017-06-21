@@ -35,8 +35,8 @@ Released under the MIT license: http://jsbin.mit-license.org
   
   <br /><br />
   
-  <button onclick="principal();">等额本金(利随本清)</button>
-  <button onclick="principalAndInterest();">等额本息</button>
+  <button onclick="principal(getValues());">等额本金(利随本清)</button>
+  <button onclick="principalAndInterest(getValues());">等额本息</button>
   
   <div id="data"></div>
 <script id="jsbin-javascript">
@@ -51,7 +51,7 @@ Released under the MIT license: http://jsbin.mit-license.org
   }
 
 // --- 等额本金贷款计算器 ---
-function principal(data = getValues()) {
+function principal(data) {
   
   var {loanAmount, numPerYear, year, ratePerYear} = data;
 
@@ -94,7 +94,7 @@ function principal(data = getValues()) {
 // principal()
 
 // --- 等额本息贷款计算器 ---
-function principalAndInterest(data = getValues()) {
+function principalAndInterest(data) {
   
   var {loanAmount, numPerYear, year, ratePerYear} = data;
 
