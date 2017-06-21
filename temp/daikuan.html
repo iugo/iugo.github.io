@@ -53,7 +53,10 @@ Released under the MIT license: http://jsbin.mit-license.org
 // --- 等额本金贷款计算器 ---
 function principal(data) {
   
-  var {loanAmount, numPerYear, year, ratePerYear} = data;
+  var loanAmount = data.loanAmount;
+  var numPerYear = data.numPerYear;
+  var year = data.year;
+  var ratePerYear = data.ratePerYear;
 
   // 期数
   var loanNum = year * numPerYear
@@ -96,7 +99,10 @@ function principal(data) {
 // --- 等额本息贷款计算器 ---
 function principalAndInterest(data) {
   
-  var {loanAmount, numPerYear, year, ratePerYear} = data;
+  var loanAmount = data.loanAmount;
+  var numPerYear = data.numPerYear;
+  var year = data.year;
+  var ratePerYear = data.ratePerYear;
 
 // 期数
 var loanNum = year * numPerYear
