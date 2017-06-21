@@ -44,38 +44,38 @@ Released under the MIT license: http://jsbin.mit-license.org
 function principal() {
   
   // 贷款额
-const loanAmount = document.getElementById('loanAmount').value;
+var loanAmount = document.getElementById('loanAmount').value;
 
 // 年期数
-const numPerYear = document.getElementById('numPerYear').value;
+var numPerYear = document.getElementById('numPerYear').value;
 // 年份
-const year = document.getElementById('year').value;
+var year = document.getElementById('year').value;
 // 年利率
-const ratePerYear = document.getElementById('ratePerYear').value;
+var ratePerYear = document.getElementById('ratePerYear').value;
 
 // 期数
-const loanNum = year * numPerYear
+var loanNum = year * numPerYear
 
 // 期利率
-const loanRate = ratePerYear / numPerYear
+var loanRate = ratePerYear / numPerYear
 
 
     // 每期还本金
-    const amountPerNum = loanAmount / loanNum
+    var amountPerNum = loanAmount / loanNum
 
     // 每月还款额
-    const arr = []
+    var arr = []
 
-    for (let i = 0; i < loanNum; i++) {
-        const amount = amountPerNum + (loanAmount - amountPerNum * i) * loanRate
+    for (var i = 0; i < loanNum; i++) {
+        var amount = amountPerNum + (loanAmount - amountPerNum * i) * loanRate
         arr.push(rounding(amount))
     }
 
-    const totalAmount = arr.reduce((acc, val) => {
+    var totalAmount = arr.reduce((acc, val) => {
         return acc + val
     }, 0)
 
-    const warp = document.getElementById('data');
+    var warp = document.getElementById('data');
     warp.innerHTML = '';
     arr.forEach((v, i) => {
       warp.appendChild(document.createTextNode(`第${i + 1}期: ${v}元`))
@@ -92,28 +92,28 @@ function principalAndInterest() {
   
   
   // 贷款额
-const loanAmount = document.getElementById('loanAmount').value;
+var loanAmount = document.getElementById('loanAmount').value;
 
 // 年期数
-const numPerYear = document.getElementById('numPerYear').value;
+var numPerYear = document.getElementById('numPerYear').value;
 // 年份
-const year = document.getElementById('year').value;
+var year = document.getElementById('year').value;
 // 年利率
-const ratePerYear = document.getElementById('ratePerYear').value;
+var ratePerYear = document.getElementById('ratePerYear').value;
 
 // 期数
-const loanNum = year * numPerYear
+var loanNum = year * numPerYear
 
 // 期利率
-const loanRate = ratePerYear / numPerYear
+var loanRate = ratePerYear / numPerYear
 
 
 
     // 算法参考 http://baike.baidu.com/item/%E7%AD%89%E9%A2%9D%E6%9C%AC%E6%81%AF%E8%BF%98%E6%AC%BE%E6%B3%95
-    const temp = Math.pow(1 + loanRate, loanNum)
-    const repayment = rounding(loanAmount * loanRate * temp / (temp - 1))
+    var temp = Math.pow(1 + loanRate, loanNum)
+    var repayment = rounding(loanAmount * loanRate * temp / (temp - 1))
 
-    const warp = document.getElementById('data');
+    var warp = document.getElementById('data');
     warp.innerHTML = '';
     warp.appendChild(document.createTextNode(`每期还款额: ${repayment}元`))
     warp.appendChild(document.createElement('br'))
