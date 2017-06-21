@@ -78,7 +78,7 @@ var loanRate = ratePerYear / numPerYear
     var warp = document.getElementById('data');
     warp.innerHTML = '';
     arr.forEach((v, i) => {
-      warp.appendChild(document.createTextNode(`第${i + 1}期: ${v}元`))
+      warp.appendChild(document.createTextNode(`第${i + 1}期: ${v}元(本金${amountPerNum} + 利息${i - amountPerNum})`))
       warp.appendChild(document.createElement('br'))
     })
 
