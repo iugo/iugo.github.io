@@ -40,24 +40,26 @@ Released under the MIT license: http://jsbin.mit-license.org
   
   <div id="data"></div>
 <script id="jsbin-javascript">
+
+  function getValues() {
+    return {
+      loanAmount: document.getElementById('loanAmount').value,
+      numPerYear: document.getElementById('numPerYear').value,
+      year: document.getElementById('year').value,
+      ratePerYear: document.getElementById('ratePerYear').value,
+    }
+  }
+
 // --- 等额本金贷款计算器 ---
-function principal() {
+function principal(data = getValues()) {
   
-  // 贷款额
-var loanAmount = document.getElementById('loanAmount').value;
+  var {loanAmount, numPerYear, year, ratePerYear} = data;
 
-// 年期数
-var numPerYear = document.getElementById('numPerYear').value;
-// 年份
-var year = document.getElementById('year').value;
-// 年利率
-var ratePerYear = document.getElementById('ratePerYear').value;
+  // 期数
+  var loanNum = year * numPerYear
 
-// 期数
-var loanNum = year * numPerYear
-
-// 期利率
-var loanRate = ratePerYear / numPerYear
+  // 期利率
+  var loanRate = ratePerYear / numPerYear
 
 
     // 每期还本金
@@ -79,31 +81,22 @@ var loanRate = ratePerYear / numPerYear
     }, 0)
 
     var warp = document.getElementById('data');
-    warp.innerHTML = '';
+    warp.innerHTML = '第几期: 应还款额 (本金 + 利息)<br /><br />';
     arr.forEach((v, i) => {
-      var adjustedAmount = i === arr.length - 1 ? Math.round((rounding(amountPerNum) - amountDeviation) * 100) / 100 : rounding(amountPerNum)
-      warp.appendChild(document.createTextNode(`第${i + 1}期: ${v}元(本金${adjustedAmount} + 利息${Math.round((v - adjustedAmount) * 100) / 100})`))
+      var adjustedAmount = i === arr.length - 1 ? rounding(amountPerNum - amountDeviation) : rounding(amountPerNum)
+      warp.appendChild(document.createTextNode(`第${i + 1}期: ${v}元 (${adjustedAmount} + ${rounding(v - adjustedAmount)})`))
       warp.appendChild(document.createElement('br'))
     })
 
-    warp.appendChild(document.createTextNode(`总还款额: ${totalAmount}元`))
+    warp.appendChild(document.createTextNode(`总还款额: ${rounding(totalAmount)}元`))
 }
 
 // principal()
 
 // --- 等额本息贷款计算器 ---
-function principalAndInterest() {
+function principalAndInterest(data = getValues()) {
   
-  
-  // 贷款额
-var loanAmount = document.getElementById('loanAmount').value;
-
-// 年期数
-var numPerYear = document.getElementById('numPerYear').value;
-// 年份
-var year = document.getElementById('year').value;
-// 年利率
-var ratePerYear = document.getElementById('ratePerYear').value;
+  var {loanAmount, numPerYear, year, ratePerYear} = data;
 
 // 期数
 var loanNum = year * numPerYear
@@ -111,14 +104,12 @@ var loanNum = year * numPerYear
 // 期利率
 var loanRate = ratePerYear / numPerYear
 
-
-
     // 算法参考 http://baike.baidu.com/item/%E7%AD%89%E9%A2%9D%E6%9C%AC%E6%81%AF%E8%BF%98%E6%AC%BE%E6%B3%95
     var temp = Math.pow(1 + loanRate, loanNum)
     var repayment = rounding(loanAmount * loanRate * temp / (temp - 1))
 
     var warp = document.getElementById('data');
-    warp.innerHTML = '';
+    warp.innerHTML = '<br />';
     warp.appendChild(document.createTextNode(`每期还款额: ${repayment}元`))
     warp.appendChild(document.createElement('br'))
     warp.appendChild(document.createTextNode(`总还款额: ${repayment * loanNum}元`))
